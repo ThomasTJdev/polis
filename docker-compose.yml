@@ -13,7 +13,7 @@ services:
     ports:
       - 5432:5432
   jackson:
-    image: boxyhq/jackson:1.52.2
+    image: boxyhq/jackson:1.52.2.1
     restart: always
     environment:
       - JACKSON_API_KEYS=secret

@@ -6,8 +6,8 @@ resources:
   - ./secrets.yaml
 
 commonLabels:
-  jacksondev: '1'
+  jacksondev: "1"
 
 images:
   - name: boxyhq/jackson
-    newTag: 1.52.2
+    newTag: 1.52.2.1
