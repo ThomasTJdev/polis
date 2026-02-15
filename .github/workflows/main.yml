@@ -178,8 +178,8 @@ jobs:
           publishTag="latest"
           imageSuffix=""
           BOXYHQ_GITHUB_REPO="${GITHUB_REPO}"
-          # ghcr.io format: ghcr.io/owner/repo
-          imagePath="ghcr.io/${BOXYHQ_GITHUB_REPO}"
+          # ghcr.io format: ghcr.io/owner/repo (Docker requires lowercase repository names)
+          imagePath="ghcr.io/$(echo ${BOXYHQ_GITHUB_REPO} | tr '[:upper:]' '[:lower:]')"
 
           # Version tags (v1.0.0, v2.3.4, etc.) - use tag as version
           if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
@@ -190,7 +190,7 @@ jobs:
             echo "Non-version run (manual or other trigger)"
             publishTag="beta"
             imageSuffix="-beta"
-            imagePath="ghcr.io/${BOXYHQ_GITHUB_REPO}-beta"
+            imagePath="ghcr.io/$(echo ${BOXYHQ_GITHUB_REPO}-beta | tr '[:upper:]' '[:lower:]')"
             JACKSON_VERSION="${JACKSON_VERSION}-beta.${GITHUB_RUN_NUMBER}"
           fi
 
