@@ -6,7 +6,7 @@ resources:
   - ./secrets.yaml
 
 commonLabels:
-  jacksondev: "1"
+  jacksondev: '1'
 
 images:
   - name: boxyhq/jackson
